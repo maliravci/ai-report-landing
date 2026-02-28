@@ -201,4 +201,16 @@
   updateBackToTop();
   updateFloatingCta();
   updateActiveNav();
+
+  // --- Dynamic year ---
+  var currentYear = new Date().getFullYear();
+  document.querySelectorAll('.js-year').forEach(function (el) {
+    el.textContent = currentYear;
+  });
+
+  // --- Dynamic hero NAV date ---
+  var heroNavDate = document.getElementById('heroNavDate');
+  if (heroNavDate) {
+    heroNavDate.textContent = new Date().toISOString().slice(0, 10);
+  }
 })();
