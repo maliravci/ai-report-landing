@@ -1,0 +1,17 @@
+{
+  "name": "ReportDrafter",
+  "short_name": "ReportDrafter",
+  "description": "AI-powered report builder with confidence scoring and human control.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#6366f1",
+  "icons": [
+    { "src": "Logos/logo_48x48.png", "sizes": "48x48", "type": "image/png" },
+    { "src": "Logos/logo_64x64.png", "sizes": "64x64", "type": "image/png" },
+    { "src": "Logos/logo_128x128.png", "sizes": "128x128", "type": "image/png" },
+    { "src": "Logos/logo_256x256.png", "sizes": "256x256", "type": "image/png" },
+    { "src": "Logos/logo_512x512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "Logos/logo.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}

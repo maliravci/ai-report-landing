@@ -4,19 +4,37 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact — ReportDrafter</title>
-  <meta name="description" content="Get in touch with the ReportDrafter team — sales, support, and partnership inquiries." />
+  <meta name="description" content="Reach the ReportDrafter team for sales, technical support, enterprise deployments, or partnership inquiries. We typically respond within 4 hours." />
   <link rel="icon" type="image/svg+xml" href="../Logos/logo.svg" />
   <link rel="icon" type="image/png" sizes="32x32" href="../Logos/logo_32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="../Logos/logo_16x16.png" />
+  <link rel="apple-touch-icon" sizes="128x128" href="../Logos/logo_128x128.png" />
+  <link rel="manifest" href="../manifest.json" />
   <meta name="robots" content="index, follow" />
   <meta name="theme-color" content="#6366f1" />
+  <link rel="canonical" href="https://reportdrafter.com/pages/contact.html" />
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://reportdrafter.com/pages/contact.html" />
+  <meta property="og:title" content="Contact Us — ReportDrafter" />
+  <meta property="og:description" content="Reach the ReportDrafter team for sales, technical support, enterprise deployments, or partnership inquiries. We typically respond within 4 hours." />
+  <meta property="og:image" content="https://reportdrafter.com/Logos/logo_512x512.png" />
+  <meta property="og:site_name" content="ReportDrafter" />
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Contact Us — ReportDrafter" />
+  <meta name="twitter:description" content="Reach the ReportDrafter team for sales, technical support, enterprise deployments, or partnership inquiries. We typically respond within 4 hours." />
+  <meta name="twitter:image" content="https://reportdrafter.com/Logos/logo_512x512.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../styles.css" />
   <link rel="stylesheet" href="shared.css" />
+  <noscript><style>.fade-in{opacity:1!important;transform:none!important;transition:none!important}</style></noscript>
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <!-- NAVBAR -->
   <nav class="navbar" id="navbar">
@@ -41,7 +59,7 @@
     </div>
   </nav>
 
-  <main>
+  <main id="main-content">
     <section class="subpage-header">
       <div class="container">
         <h1>Contact Us</h1>
@@ -79,12 +97,14 @@
           </div>
 
           <div>
-            <form class="contact-form" onsubmit="event.preventDefault(); alert('Thank you! We\'ll be in touch shortly.');">
+            <form class="contact-form" id="contactForm" novalidate>
               <label for="contact-name">Name</label>
-              <input type="text" id="contact-name" name="name" placeholder="Your full name" required />
+              <input type="text" id="contact-name" name="name" placeholder="Your full name" required autocomplete="name" />
+              <span class="field-error" id="error-name" aria-live="polite"></span>
 
               <label for="contact-email">Email</label>
-              <input type="email" id="contact-email" name="email" placeholder="you@company.com" required />
+              <input type="email" id="contact-email" name="email" placeholder="you@company.com" required autocomplete="email" />
+              <span class="field-error" id="error-email" aria-live="polite"></span>
 
               <label for="contact-subject">Subject</label>
               <select id="contact-subject" name="subject">
@@ -97,12 +117,62 @@
 
               <label for="contact-message">Message</label>
               <textarea id="contact-message" name="message" placeholder="Tell us how we can help..." required></textarea>
+              <span class="field-error" id="error-message" aria-live="polite"></span>
 
-              <button type="submit" class="btn btn-primary btn-lg" style="width: 100%; justify-content: center;">
+              <button type="submit" class="btn btn-primary btn-lg" id="contactSubmit" style="width: 100%; justify-content: center;">
                 Send Message
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </button>
+              <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
             </form>
+
+            <script>
+            (function () {
+              'use strict';
+              var form = document.getElementById('contactForm');
+              var status = document.getElementById('formStatus');
+              if (!form) return;
+
+              function showError(id, msg) {
+                var el = document.getElementById('error-' + id);
+                if (el) el.textContent = msg;
+              }
+              function clearErrors() {
+                form.querySelectorAll('.field-error').forEach(function (el) { el.textContent = ''; });
+                status.textContent = '';
+                status.className = 'form-status';
+              }
+
+              form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                clearErrors();
+                var valid = true;
+                var name = form.elements['name'];
+                var email = form.elements['email'];
+                var message = form.elements['message'];
+
+                if (!name.value.trim()) { showError('name', 'Please enter your name.'); valid = false; }
+                if (!email.value.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
+                  showError('email', 'Please enter a valid email address.'); valid = false;
+                }
+                if (!message.value.trim()) { showError('message', 'Please enter a message.'); valid = false; }
+                if (!valid) return;
+
+                // TODO: Replace with real form endpoint (Formspree, Netlify Forms, etc.)
+                var btn = document.getElementById('contactSubmit');
+                btn.disabled = true;
+                btn.textContent = 'Sending…';
+
+                setTimeout(function () {
+                  status.className = 'form-status success';
+                  status.textContent = 'Thank you! We\u2019ll be in touch within 1 business day.';
+                  form.reset();
+                  btn.disabled = false;
+                  btn.innerHTML = 'Send Message <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>';
+                }, 800);
+              });
+            })();
+            </script>
           </div>
 
         </div>

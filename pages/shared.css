@@ -359,6 +359,44 @@
   resize: vertical;
 }
 
+/* --- Form validation & status --- */
+.field-error {
+  display: block;
+  font-size: 13px;
+  color: #ef4444;
+  margin: -14px 0 16px;
+  min-height: 18px;
+}
+
+.form-status {
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 12px;
+  padding: 12px 16px;
+  border-radius: 10px;
+  display: none;
+}
+
+.form-status.success {
+  display: block;
+  background: rgba(34, 197, 94, 0.08);
+  color: #16a34a;
+  border: 1px solid rgba(34, 197, 94, 0.2);
+}
+
+.form-status.error {
+  display: block;
+  background: rgba(239, 68, 68, 0.08);
+  color: #ef4444;
+  border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.contact-form button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
 /* --- Responsive subpage --- */
 @media (max-width: 768px) {
   .contact-grid {
