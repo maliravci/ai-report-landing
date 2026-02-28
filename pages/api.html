@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>API Reference — ReportDrafter</title>
+  <meta name="description" content="REST API documentation for ReportDrafter — upload documents, trigger extraction, and download reports programmatically." />
+  <link rel="icon" type="image/png" sizes="32x32" href="../Logos/logo_32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="../Logos/logo_16x16.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="stylesheet" href="shared.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="../index.html" class="nav-logo">
+        <img src="../Logos/logo_48x48.png" alt="" class="logo-img" width="34" height="34" aria-hidden="true" />
+        <span class="logo-text"><span class="logo-report">Report</span><span class="logo-drafter">Drafter</span></span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../index.html#features">Features</a></li>
+        <li><a href="../index.html#how-it-works">How It Works</a></li>
+        <li><a href="../index.html#confidence">AI Confidence</a></li>
+        <li><a href="../index.html#platforms">Platforms</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="https://app.reportdrafter.com/login" class="btn btn-sm nav-login">Log In</a>
+        <a href="https://app.reportdrafter.com/signup" class="btn btn-primary btn-sm nav-signup">Sign Up</a>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="subpage-header">
+      <div class="container">
+        <h1>API Reference</h1>
+        <p class="subtitle">Integrate ReportDrafter into your workflows with our REST API. Upload, extract, and download reports programmatically.</p>
+        <p class="meta">API Version: v1 (Beta) · Base URL: <code>https://api.reportdrafter.com/v1</code></p>
+      </div>
+    </section>
+
+    <section class="subpage-body">
+      <div class="container">
+
+        <div class="prose">
+          <h2>Authentication</h2>
+          <p>All API requests require a Bearer token in the <code>Authorization</code> header. Generate an API key from your workspace settings under <strong>Settings → API Keys</strong>.</p>
+          <pre><code>Authorization: Bearer rd_live_xxxxxxxxxxxxxxxxxxxx</code></pre>
+        </div>
+
+        <div class="prose" style="margin-top: 48px;">
+          <h2>Endpoints</h2>
+        </div>
+
+        <!-- Templates -->
+        <div class="endpoint-card">
+          <div>
+            <span class="endpoint-method get">GET</span>
+            <span class="endpoint-path">/templates</span>
+          </div>
+          <p class="endpoint-desc">List all report templates in the current workspace. Returns template ID, name, field count, and creation date.</p>
+        </div>
+
+        <div class="endpoint-card">
+          <div>
+            <span class="endpoint-method post">POST</span>
+            <span class="endpoint-path">/templates</span>
+          </div>
+          <p class="endpoint-desc">Upload a new report template (.docx or .xlsx). The system parses the template structure and detects extractable fields.</p>
+          <div class="prose">
+            <pre><code>curl -X POST https://api.reportdrafter.com/v1/templates \
+  -H "Authorization: Bearer rd_live_xxx" \
+  -F "file=@quarterly_report_template.docx"</code></pre>
+          </div>
+        </div>
+
+        <div class="endpoint-card">
+          <div>
+            <span class="endpoint-method get">GET</span>
+            <span class="endpoint-path">/templates/{id}</span>
+          </div>
+          <p class="endpoint-desc">Retrieve details for a specific template, including its detected fields (name, type, position).</p>
+        </div>
+
+        <div class="endpoint-card">
+          <div>
+            <span class="endpoint-method delete">DELETE</span>
+            <span class="endpoint-path">/templates/{id}</span>
+          </div>
+          <p class="endpoint-desc">Delete a template and all associated reports. This action cannot be undone.</p>
+        </div>
+
+        <!-- Documents -->
+        <div class="prose" style="margin-top: 48px;">
+          <h2>Source Documents</h2>
+        </div>
+
+        <div class="endpoint-card">
+          <div>
+            <span class="endpoint-method post">POST</span>
+            <span class="endpoint-path">/documents</span>
+          </div>
+          <p class="endpoint-desc">Upload a source document (.pdf, .docx, .xlsx) to be used during extraction. Returns a document ID.</p>
+        </div>
+
+        <div class="endpoint-card">
+          <div>
+            <span class="endpoint-method get">GET</span>
+            <span class="endpoint-path">/documents</span>
+          </div>
+          <p class="endpoint-desc">List all uploaded source documents in the workspace.</p>
+        </div>
+
+        <!-- Extraction -->
+        <div class="prose" style="margin-top: 48px;">
+          <h2>Extraction</h2>
+        </div>
+
+        <div class="endpoint-card">
+          <div>
+            <span class="endpoint-method post">POST</span>
+            <span class="endpoint-path">/extractions</span>
+          </div>
+          <p class="endpoint-desc">Start an AI extraction job. Provide the template ID and one or more document IDs. Returns a job ID and status.</p>
+          <div class="prose">
+            <pre><code>curl -X POST https://api.reportdrafter.com/v1/extractions \
+  -H "Authorization: Bearer rd_live_xxx" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "template_id": "tmpl_abc123",
+    "document_ids": ["doc_def456", "doc_ghi789"]
+  }'</code></pre>
+          </div>
+        </div>
+
+        <div class="endpoint-card">
+          <div>
+            <span class="endpoint-method get">GET</span>
+            <span class="endpoint-path">/extractions/{id}</span>
+          </div>
+          <p class="endpoint-desc">Check extraction status and retrieve results. Returns field values with confidence scores once processing is complete.</p>
+          <div class="prose">
+            <p>Response example:</p>
+            <pre><code>{
+  "id": "ext_xyz789",
+  "status": "completed",
+  "fields": [
+    {
+      "name": "Fund Name",
+      "value": "Horizon Growth Fund II",
+      "confidence": 0.98,
+      "locked": false
+    },
+    {
+      "name": "NAV Date",
+      "value": "2026-02-28",
+      "confidence": 0.95,
+      "locked": false
+    }
+  ]
+}</code></pre>
+          </div>
+        </div>
+
+        <div class="endpoint-card">
+          <div>
+            <span class="endpoint-method put">PUT</span>
+            <span class="endpoint-path">/extractions/{id}/fields/{field_name}</span>
+          </div>
+          <p class="endpoint-desc">Update a specific field value or lock/unlock it. Use this after manual review to correct AI-extracted values.</p>
+        </div>
+
+        <!-- Reports -->
+        <div class="prose" style="margin-top: 48px;">
+          <h2>Reports</h2>
+        </div>
+
+        <div class="endpoint-card">
+          <div>
+            <span class="endpoint-method post">POST</span>
+            <span class="endpoint-path">/reports</span>
+          </div>
+          <p class="endpoint-desc">Generate a final report from a completed extraction. The report uses approved field values and applies them to the original template layout.</p>
+        </div>
+
+        <div class="endpoint-card">
+          <div>
+            <span class="endpoint-method get">GET</span>
+            <span class="endpoint-path">/reports/{id}/download</span>
+          </div>
+          <p class="endpoint-desc">Download the generated report file (.docx or .xlsx). Returns the binary file with appropriate content headers.</p>
+        </div>
+
+        <!-- Rate Limits -->
+        <div class="prose" style="margin-top: 48px;">
+          <h2>Rate Limits</h2>
+          <table>
+            <thead>
+              <tr><th>Plan</th><th>Requests / minute</th><th>Extractions / day</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Free</td><td>30</td><td>10</td></tr>
+              <tr><td>Pro</td><td>120</td><td>200</td></tr>
+              <tr><td>Enterprise</td><td>600</td><td>Unlimited</td></tr>
+            </tbody>
+          </table>
+          <p>Rate-limited responses return HTTP <code>429</code> with a <code>Retry-After</code> header.</p>
+        </div>
+
+        <!-- Errors -->
+        <div class="prose" style="margin-top: 48px;">
+          <h2>Error Codes</h2>
+          <table>
+            <thead>
+              <tr><th>Code</th><th>Meaning</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><code>400</code></td><td>Bad request — missing or invalid parameters</td></tr>
+              <tr><td><code>401</code></td><td>Unauthorized — invalid or missing API key</td></tr>
+              <tr><td><code>403</code></td><td>Forbidden — insufficient permissions</td></tr>
+              <tr><td><code>404</code></td><td>Not found — resource does not exist</td></tr>
+              <tr><td><code>422</code></td><td>Unprocessable — file format not supported</td></tr>
+              <tr><td><code>429</code></td><td>Rate limited — slow down</td></tr>
+              <tr><td><code>500</code></td><td>Internal server error</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="../index.html" class="nav-logo">
+            <img src="../Logos/logo_48x48.png" alt="" class="logo-img" width="34" height="34" aria-hidden="true" />
+            <span class="logo-text"><span class="logo-report">Report</span><span class="logo-drafter">Drafter</span></span>
+          </a>
+          <p>AI-powered report builder for extracting, reviewing, and finalizing structured reports with confidence and control.</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h4>Product</h4>
+            <a href="../index.html#features">Features</a>
+            <a href="../index.html#how-it-works">How It Works</a>
+            <a href="../index.html#confidence">AI Confidence</a>
+            <a href="../index.html#platforms">Platforms</a>
+          </div>
+          <div class="footer-col">
+            <h4>Resources</h4>
+            <a href="docs.html">Documentation</a>
+            <a href="api.html">API Reference</a>
+            <a href="changelog.html">Changelog</a>
+          </div>
+          <div class="footer-col">
+            <h4>Company</h4>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 ReportDrafter. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

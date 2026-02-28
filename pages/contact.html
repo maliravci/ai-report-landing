@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — ReportDrafter</title>
+  <meta name="description" content="Get in touch with the ReportDrafter team — sales, support, and partnership inquiries." />
+  <link rel="icon" type="image/png" sizes="32x32" href="../Logos/logo_32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="../Logos/logo_16x16.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="stylesheet" href="shared.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="../index.html" class="nav-logo">
+        <img src="../Logos/logo_48x48.png" alt="" class="logo-img" width="34" height="34" aria-hidden="true" />
+        <span class="logo-text"><span class="logo-report">Report</span><span class="logo-drafter">Drafter</span></span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../index.html#features">Features</a></li>
+        <li><a href="../index.html#how-it-works">How It Works</a></li>
+        <li><a href="../index.html#confidence">AI Confidence</a></li>
+        <li><a href="../index.html#platforms">Platforms</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="https://app.reportdrafter.com/login" class="btn btn-sm nav-login">Log In</a>
+        <a href="https://app.reportdrafter.com/signup" class="btn btn-primary btn-sm nav-signup">Sign Up</a>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="subpage-header">
+      <div class="container">
+        <h1>Contact Us</h1>
+        <p class="subtitle">Have a question, feedback, or partnership inquiry? We'd love to hear from you.</p>
+      </div>
+    </section>
+
+    <section class="subpage-body">
+      <div class="container">
+        <div class="contact-grid">
+
+          <div>
+            <div class="contact-info-card">
+              <h3>General Inquiries</h3>
+              <p>For general questions about ReportDrafter, product capabilities, or getting started.</p>
+              <p style="margin-top: 8px;"><a href="mailto:hello@reportdrafter.com" style="color: var(--primary); text-decoration: underline;">hello@reportdrafter.com</a></p>
+            </div>
+
+            <div class="contact-info-card">
+              <h3>Technical Support</h3>
+              <p>Having trouble with uploads, extraction, or exports? Our support team typically responds within 4 hours on business days.</p>
+              <p style="margin-top: 8px;"><a href="mailto:support@reportdrafter.com" style="color: var(--primary); text-decoration: underline;">support@reportdrafter.com</a></p>
+            </div>
+
+            <div class="contact-info-card">
+              <h3>Enterprise &amp; Partnerships</h3>
+              <p>Interested in a custom deployment, volume licensing, or integration partnership?</p>
+              <p style="margin-top: 8px;"><a href="mailto:enterprise@reportdrafter.com" style="color: var(--primary); text-decoration: underline;">enterprise@reportdrafter.com</a></p>
+            </div>
+
+            <div class="contact-info-card">
+              <h3>Office</h3>
+              <p>ReportDrafter, Inc.<br />548 Market Street, Suite 46382<br />San Francisco, CA 94104<br />United States</p>
+            </div>
+          </div>
+
+          <div>
+            <form class="contact-form" onsubmit="event.preventDefault(); alert('Thank you! We\'ll be in touch shortly.');">
+              <label for="contact-name">Name</label>
+              <input type="text" id="contact-name" name="name" placeholder="Your full name" required />
+
+              <label for="contact-email">Email</label>
+              <input type="email" id="contact-email" name="email" placeholder="you@company.com" required />
+
+              <label for="contact-subject">Subject</label>
+              <select id="contact-subject" name="subject">
+                <option value="general">General Inquiry</option>
+                <option value="support">Technical Support</option>
+                <option value="sales">Sales &amp; Pricing</option>
+                <option value="enterprise">Enterprise / Partnership</option>
+                <option value="press">Press &amp; Media</option>
+              </select>
+
+              <label for="contact-message">Message</label>
+              <textarea id="contact-message" name="message" placeholder="Tell us how we can help..." required></textarea>
+
+              <button type="submit" class="btn btn-primary btn-lg" style="width: 100%; justify-content: center;">
+                Send Message
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="../index.html" class="nav-logo">
+            <img src="../Logos/logo_48x48.png" alt="" class="logo-img" width="34" height="34" aria-hidden="true" />
+            <span class="logo-text"><span class="logo-report">Report</span><span class="logo-drafter">Drafter</span></span>
+          </a>
+          <p>AI-powered report builder for extracting, reviewing, and finalizing structured reports with confidence and control.</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h4>Product</h4>
+            <a href="../index.html#features">Features</a>
+            <a href="../index.html#how-it-works">How It Works</a>
+            <a href="../index.html#confidence">AI Confidence</a>
+            <a href="../index.html#platforms">Platforms</a>
+          </div>
+          <div class="footer-col">
+            <h4>Resources</h4>
+            <a href="docs.html">Documentation</a>
+            <a href="api.html">API Reference</a>
+            <a href="changelog.html">Changelog</a>
+          </div>
+          <div class="footer-col">
+            <h4>Company</h4>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 ReportDrafter. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ReportDrafter — Intelligent Document Automation</title>
+  <meta name="description" content="Upload templates, extract data with AI, review with confidence scores, and download polished reports in seconds." />
+  <link rel="icon" type="image/png" sizes="32x32" href="Logos/logo_32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="Logos/logo_16x16.png" />
+  <link rel="apple-touch-icon" sizes="128x128" href="Logos/logo_128x128.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ========== NAVBAR ========== -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#" class="nav-logo">
+        <img src="Logos/logo_48x48.png" alt="" class="logo-img" width="34" height="34" aria-hidden="true" />
+        <span class="logo-text"><span class="logo-report">Report</span><span class="logo-drafter">Drafter</span></span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#how-it-works">How It Works</a></li>
+        <li><a href="#confidence">AI Confidence</a></li>
+        <li><a href="#platforms">Platforms</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="https://app.reportdrafter.com/login" class="btn btn-sm nav-login">Log In</a>
+        <a href="https://app.reportdrafter.com/signup" class="btn btn-primary btn-sm nav-signup">Sign Up</a>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========== HERO ========== -->
+  <header class="hero" id="hero">
+    <div class="hero-bg"></div>
+    <div class="container hero-container">
+      <div class="hero-content">
+        <div class="hero-badge">Report Builder Platform</div>
+        <h1 class="hero-title">
+          Build Accurate Reports<br />
+          <span class="gradient-text">From Real Documents</span>
+        </h1>
+        <p class="hero-subtitle">
+          ReportDrafter helps operations and compliance teams complete repetitive reports faster. Upload a template and source files, review confidence on every field, make corrections, and export a final report you can trust.
+        </p>
+        <div class="hero-cta">
+          <a href="https://app.reportdrafter.com/signup" class="btn btn-primary btn-lg">
+            Start Generating Reports
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#how-it-works" class="btn btn-ghost btn-lg">
+            See How It Works
+          </a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat">
+            <span class="stat-value">95%+</span>
+            <span class="stat-label">Field Match Precision</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="stat-value">10x</span>
+            <span class="stat-label">Faster Report Completion</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="stat-value">21</span>
+            <span class="stat-label">Localized Interfaces</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-card">
+          <div class="card-header">
+            <div class="card-dots">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+            </div>
+            <span class="card-title">Report Result</span>
+          </div>
+          <div class="card-body">
+            <div class="field-row">
+              <span class="field-label">Fund Name</span>
+              <span class="field-value">Horizon Growth Fund II</span>
+              <span class="confidence high">98%</span>
+            </div>
+            <div class="field-row">
+              <span class="field-label">NAV Date</span>
+              <span class="field-value">2026-02-28</span>
+              <span class="confidence high">95%</span>
+            </div>
+            <div class="field-row">
+              <span class="field-label">Total Assets</span>
+              <span class="field-value">$142,500,000</span>
+              <span class="confidence medium">82%</span>
+            </div>
+            <div class="field-row">
+              <span class="field-label">Management Fee</span>
+              <span class="field-value">1.5%</span>
+              <span class="confidence high">91%</span>
+            </div>
+            <div class="field-row">
+              <span class="field-label">Inception Date</span>
+              <span class="field-value">March 15, 2024</span>
+              <span class="confidence low">67%</span>
+            </div>
+          </div>
+          <div class="card-footer">
+            <span class="card-badge success">4/5 fields verified at high confidence</span>
+            <button class="card-btn">Download</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-wave">
+      <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+        <path d="M0 120L60 105C120 90 240 60 360 45C480 30 600 30 720 37.5C840 45 960 60 1080 67.5C1200 75 1320 75 1380 75L1440 75V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z" fill="var(--bg)"/>
+      </svg>
+    </div>
+  </header>
+
+  <!-- ========== FEATURES ========== -->
+  <section class="features" id="features">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Features</span>
+        <h2 class="section-title">Everything You Need for<br /><span class="gradient-text">Automated Reporting</span></h2>
+        <p class="section-subtitle">A practical report builder designed for real workflows: extraction, validation, correction, and export.</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon" aria-hidden="true">AI</div>
+          <h3>Template-Aware Extraction</h3>
+          <p>The app reads your template structure, detects expected fields, and extracts matching values from source documents automatically.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon" aria-hidden="true">CS</div>
+          <h3>Confidence Scoring</h3>
+          <p>Each field includes a confidence score so teams can prioritize review and focus attention where risk is highest.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon" aria-hidden="true">ED</div>
+          <h3>Field-Level Editing</h3>
+          <p>Adjust any value manually, lock approved fields, and rerun extraction only for fields that still need refinement.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon" aria-hidden="true">EX</div>
+          <h3>Reliable Export</h3>
+          <p>Generate complete .docx or .xlsx reports while preserving original layout, formulas, and formatting standards.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon" aria-hidden="true">LG</div>
+          <h3>Multilingual Teams</h3>
+          <p>Use the platform in 21 localized interfaces to support distributed teams and region-specific reporting processes.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon" aria-hidden="true">TR</div>
+          <h3>Transparent Review Trail</h3>
+          <p>Track extracted values, confidence history, and manual overrides so the final report remains explainable and auditable.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== HOW IT WORKS ========== -->
+  <section class="how-it-works" id="how-it-works">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">How It Works</span>
+        <h2 class="section-title">From Upload to Report<br /><span class="gradient-text">In Four Simple Steps</span></h2>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h3>Upload Your Files</h3>
+            <p>Add a report template and one or more source documents. The builder supports structured and semi-structured inputs used in real reporting.</p>
+          </div>
+          <div class="step-visual">
+            <div class="step-icon-box">
+              <span>01</span>
+              <div class="upload-anim">
+                <div class="file-chip">.docx</div>
+                <div class="file-chip">.pdf</div>
+                <div class="file-chip">.xlsx</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h3>AI Extracts Fields</h3>
+            <p>The model maps source content to template fields, returning candidate values and confidence scores for each data point.</p>
+          </div>
+          <div class="step-visual">
+            <div class="step-icon-box">
+              <span>02</span>
+              <div class="pulse-ring"></div>
+            </div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h3>Review &amp; Refine</h3>
+            <p>Review low-confidence fields first, edit where needed, and rerun extraction for selected fields without restarting the workflow.</p>
+          </div>
+          <div class="step-visual">
+            <div class="step-icon-box">
+              <span>03</span>
+            </div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">4</div>
+          <div class="step-content">
+            <h3>Download Your Report</h3>
+            <p>Regenerate the completed document using approved values and export a final report ready for submission or internal review.</p>
+          </div>
+          <div class="step-visual">
+            <div class="step-icon-box">
+              <span>04</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONFIDENCE SECTION ========== -->
+  <section class="confidence-section" id="confidence">
+    <div class="container">
+      <div class="confidence-grid">
+        <div class="confidence-content">
+          <span class="section-badge">AI Confidence</span>
+          <h2 class="section-title">Trust, but Verify —<br /><span class="gradient-text">With Confidence Scores</span></h2>
+          <p>Every AI extraction comes with a transparent confidence rating so you know exactly which fields to trust and which to review.</p>
+          <div class="confidence-levels">
+            <div class="level">
+              <div class="level-bar high" style="width: 95%"></div>
+              <div class="level-info">
+                <span class="level-badge high">High (≥90%)</span>
+                <span class="level-desc">Extraction looks great — ready to use</span>
+              </div>
+            </div>
+            <div class="level">
+              <div class="level-bar medium" style="width: 78%"></div>
+              <div class="level-info">
+                <span class="level-badge medium">Medium (70-89%)</span>
+                <span class="level-desc">Please review — may need correction</span>
+              </div>
+            </div>
+            <div class="level">
+              <div class="level-bar low" style="width: 55%"></div>
+              <div class="level-info">
+                <span class="level-badge low">Low (&lt;70%)</span>
+                <span class="level-desc">Manual review recommended</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="confidence-visual">
+          <div class="gauge-container">
+            <svg class="gauge" viewBox="0 0 200 200">
+              <circle cx="100" cy="100" r="85" fill="none" stroke="var(--border)" stroke-width="12" />
+              <circle class="gauge-fill" cx="100" cy="100" r="85" fill="none" stroke="url(#gaugeGradient)" stroke-width="12" stroke-linecap="round" stroke-dasharray="534" stroke-dashoffset="80" transform="rotate(-90 100 100)" />
+              <defs>
+                <linearGradient id="gaugeGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#6366f1" />
+                  <stop offset="100%" stop-color="#06b6d4" />
+                </linearGradient>
+              </defs>
+            </svg>
+            <div class="gauge-label">
+              <span class="gauge-value">85%</span>
+              <span class="gauge-text">Avg. Confidence</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PLATFORMS ========== -->
+  <section class="platforms" id="platforms">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Cross-Platform</span>
+        <h2 class="section-title">Works Everywhere<br /><span class="gradient-text">You Do</span></h2>
+        <p class="section-subtitle">Run the report builder on web, iOS, and Android with the same core workflow and consistent field review experience.</p>
+      </div>
+      <div class="platform-cards">
+        <div class="platform-card">
+          <div class="platform-icon web" aria-hidden="true">
+            <!-- Globe / Web -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="#1a73e8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M2 12h20"/>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+            </svg>
+          </div>
+          <h3>Web</h3>
+          <p>Full report editing and export in a desktop-friendly interface for high-volume operations.</p>
+        </div>
+        <div class="platform-card">
+          <div class="platform-icon ios" aria-hidden="true">
+            <!-- Apple logo -->
+            <svg viewBox="0 0 24 24" fill="#1d1d1f">
+              <path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.46 2.208 3.09 3.792 3.029 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/>
+            </svg>
+          </div>
+          <h3>iOS</h3>
+          <p>Optimized for mobile review and approvals when teams need to validate reports on the move.</p>
+        </div>
+        <div class="platform-card">
+          <div class="platform-icon android" aria-hidden="true">
+            <!-- Android robot -->
+            <svg viewBox="0 0 24 24" fill="#3DDC84">
+              <path d="M17.523 0c-.28 0-.56.107-.769.316L14.863 2.21a10.117 10.117 0 00-5.726 0L7.246.316A1.085 1.085 0 005.477 2.085l1.574 1.574A9.998 9.998 0 002 12h20A9.998 9.998 0 0015.949 3.659l1.574-1.574A1.085 1.085 0 0017.523 0zM8.5 9a1 1 0 110-2 1 1 0 010 2zm7 0a1 1 0 110-2 1 1 0 010 2zM2 14c0 5.523 4.477 10 10 10s10-4.477 10-10H2z"/>
+            </svg>
+          </div>
+          <h3>Android</h3>
+          <p>Consistent extraction and editing capabilities across Android devices and screen sizes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CTA ========== -->
+  <section class="cta" id="cta">
+    <div class="container">
+      <div class="cta-card">
+        <div class="cta-bg"></div>
+        <h2>Start Building Better Reports Today</h2>
+        <p>Join teams that have replaced manual data entry with intelligent extraction. Upload your first template, review AI-filled fields with confidence scores, and export a polished report in minutes.</p>
+        <div class="cta-stats">
+          <div class="cta-stat">
+            <span class="cta-stat-value">10x</span>
+            <span class="cta-stat-label">Faster Reports</span>
+          </div>
+          <div class="cta-stat">
+            <span class="cta-stat-value">95%</span>
+            <span class="cta-stat-label">Extraction Accuracy</span>
+          </div>
+          <div class="cta-stat">
+            <span class="cta-stat-value">500+</span>
+            <span class="cta-stat-label">Teams Using It</span>
+          </div>
+        </div>
+        <div class="cta-actions">
+          <a href="https://app.reportdrafter.com/signup" class="btn btn-cta-primary btn-xl">
+            Get Started — It's Free
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="https://app.reportdrafter.com/login" class="btn btn-outline-white btn-lg">
+            Already have an account? Log In
+          </a>
+        </div>
+        <p class="cta-note">No credit card required · Free workspace · Cancel anytime</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="#" class="nav-logo">
+            <img src="Logos/logo_48x48.png" alt="" class="logo-img" width="34" height="34" aria-hidden="true" />
+            <span class="logo-text"><span class="logo-report">Report</span><span class="logo-drafter">Drafter</span></span>
+          </a>
+          <p>AI-powered report builder for extracting, reviewing, and finalizing structured reports with confidence and control.</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h4>Product</h4>
+            <a href="#features">Features</a>
+            <a href="#how-it-works">How It Works</a>
+            <a href="#confidence">AI Confidence</a>
+            <a href="#platforms">Platforms</a>
+          </div>
+          <div class="footer-col">
+            <h4>Get Started</h4>
+            <a href="https://app.reportdrafter.com/signup">Create Account</a>
+            <a href="https://app.reportdrafter.com/login">Log In</a>
+            <a href="https://app.reportdrafter.com">Open App</a>
+          </div>
+          <div class="footer-col">
+            <h4>Resources</h4>
+            <a href="pages/docs.html">Documentation</a>
+            <a href="pages/api.html">API Reference</a>
+            <a href="pages/changelog.html">Changelog</a>
+          </div>
+          <div class="footer-col">
+            <h4>Company</h4>
+            <a href="pages/about.html">About</a>
+            <a href="pages/contact.html">Contact</a>
+            <a href="pages/privacy.html">Privacy Policy</a>
+            <a href="pages/terms.html">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 ReportDrafter. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

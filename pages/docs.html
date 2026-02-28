@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Documentation — ReportDrafter</title>
+  <meta name="description" content="Learn how to use ReportDrafter — guides for uploading templates, reviewing extractions, and generating reports." />
+  <link rel="icon" type="image/png" sizes="32x32" href="../Logos/logo_32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="../Logos/logo_16x16.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="stylesheet" href="shared.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="../index.html" class="nav-logo">
+        <img src="../Logos/logo_48x48.png" alt="" class="logo-img" width="34" height="34" aria-hidden="true" />
+        <span class="logo-text"><span class="logo-report">Report</span><span class="logo-drafter">Drafter</span></span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../index.html#features">Features</a></li>
+        <li><a href="../index.html#how-it-works">How It Works</a></li>
+        <li><a href="../index.html#confidence">AI Confidence</a></li>
+        <li><a href="../index.html#platforms">Platforms</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="https://app.reportdrafter.com/login" class="btn btn-sm nav-login">Log In</a>
+        <a href="https://app.reportdrafter.com/signup" class="btn btn-primary btn-sm nav-signup">Sign Up</a>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="subpage-header">
+      <div class="container">
+        <h1>Documentation</h1>
+        <p class="subtitle">Everything you need to get started with ReportDrafter — from first upload to final download.</p>
+      </div>
+    </section>
+
+    <section class="subpage-body">
+      <div class="container prose">
+
+        <h2>Getting Started</h2>
+
+        <h3>1. Create Your Workspace</h3>
+        <p>Sign up at <a href="../index.html#cta">reportdrafter.com</a> and create a free workspace. Each workspace is an isolated environment where templates, documents, and reports are stored. You can invite team members later from the Settings panel.</p>
+
+        <h3>2. Upload a Report Template</h3>
+        <p>Navigate to <strong>Templates → Upload</strong> and select your report template file. Supported formats:</p>
+        <ul>
+          <li><strong>.docx</strong> — Word documents with placeholder fields, merge fields, or labeled cells</li>
+          <li><strong>.xlsx</strong> — Excel workbooks with named ranges, headers, or labeled cells</li>
+        </ul>
+        <p>ReportDrafter automatically detects the template structure — field names, positions, expected data types, and any conditional sections.</p>
+
+        <h3>3. Add Source Documents</h3>
+        <p>Upload one or more source documents that contain the data to be extracted. Supported formats include <code>.pdf</code>, <code>.docx</code>, and <code>.xlsx</code>. The platform can process structured tables, narrative text, and mixed-format documents.</p>
+
+        <h3>4. Run AI Extraction</h3>
+        <p>Click <strong>Extract</strong> to start the AI extraction job. The model reads your source documents, maps content to template fields, and returns candidate values with a confidence score for each field.</p>
+        <blockquote><p>Typical extraction time is 5–15 seconds for a 10-field template with 2–3 source documents.</p></blockquote>
+
+        <h3>5. Review &amp; Edit Fields</h3>
+        <p>Fields are displayed in a table view, sorted by confidence (lowest first by default). For each field you can:</p>
+        <ul>
+          <li><strong>Accept</strong> — keep the AI-extracted value</li>
+          <li><strong>Edit</strong> — manually correct the value</li>
+          <li><strong>Lock</strong> — prevent the field from changing on re-extraction</li>
+          <li><strong>Re-extract</strong> — rerun extraction for just that field</li>
+        </ul>
+
+        <h3>6. Download Your Report</h3>
+        <p>Once all fields are approved, click <strong>Generate Report</strong>. ReportDrafter applies your approved values to the original template layout and produces a downloadable <code>.docx</code> or <code>.xlsx</code> file that matches the template formatting exactly.</p>
+
+        <h2>Understanding Confidence Scores</h2>
+        <p>Every extracted field includes a confidence score from 0% to 100%:</p>
+        <table>
+          <thead>
+            <tr><th>Score Range</th><th>Color</th><th>Guidance</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>90–100%</td><td>🟢 Green</td><td>High confidence — extraction looks correct, safe to accept</td></tr>
+            <tr><td>70–89%</td><td>🟡 Amber</td><td>Medium confidence — review recommended, may need minor correction</td></tr>
+            <tr><td>0–69%</td><td>🔴 Red</td><td>Low confidence — manual review and correction likely needed</td></tr>
+          </tbody>
+        </table>
+        <p>Confidence scores are influenced by factors like source document clarity, field specificity, and the amount of matching context available. You can view score history across extraction runs in the field detail panel.</p>
+
+        <h2>Template Best Practices</h2>
+        <ul>
+          <li>Use clear, descriptive field labels (e.g., "Fund Name" instead of "Field 1")</li>
+          <li>Keep template structure consistent — avoid mixing manual text with placeholder fields in the same cell</li>
+          <li>For Excel templates, use named ranges or header rows for best detection</li>
+          <li>Avoid heavily styled or image-based templates — the parser works best with text-based layouts</li>
+        </ul>
+
+        <h2>Workspace Settings</h2>
+
+        <h3>Team Management</h3>
+        <p>Invite team members from <strong>Settings → Team</strong>. Assign roles:</p>
+        <ul>
+          <li><strong>Admin</strong> — full access including billing and member management</li>
+          <li><strong>Editor</strong> — create, edit, and download reports</li>
+          <li><strong>Viewer</strong> — read-only access to reports and extractions</li>
+        </ul>
+
+        <h3>API Keys</h3>
+        <p>Generate API keys from <strong>Settings → API</strong> for programmatic access. See the <a href="api.html">API Reference</a> for endpoint documentation.</p>
+
+        <h3>Data Retention</h3>
+        <p>Configure how long uploaded documents are retained after processing. Default is 90 days. Enterprise plans support custom retention policies.</p>
+
+        <h2>Supported Languages</h2>
+        <p>The ReportDrafter interface is available in 21 languages: English, Spanish, French, German, Italian, Portuguese, Dutch, Swedish, Norwegian, Danish, Finnish, Japanese, Chinese (Simplified), Chinese (Traditional), Arabic, Turkish, Korean, Thai, Vietnamese, Polish, and Greek.</p>
+        <p>The AI extraction engine processes source documents in any language, though confidence scores may be higher for documents in widely-used languages with more training data.</p>
+
+        <h2>Troubleshooting</h2>
+
+        <h3>Extraction returns low confidence on all fields</h3>
+        <p>This usually means the source document format isn't matching well with the template structure. Try using clearer field labels in your template, or ensure the source document contains the expected data in a parseable format (not scanned images).</p>
+
+        <h3>Upload fails for large files</h3>
+        <p>The maximum file size is 100 MB per document. For larger files, consider splitting them into sections. If uploads fail on smaller files, check your network connection — the platform uses chunked uploads with automatic retry.</p>
+
+        <h3>Exported report has missing formatting</h3>
+        <p>Complex formatting (conditional formatting, macros, VBA) may not be preserved in all cases. Stick to standard cell formatting, fonts, and merged cells for best results.</p>
+
+        <h2>Need Help?</h2>
+        <p>Reach out to our support team at <a href="mailto:support@reportdrafter.com">support@reportdrafter.com</a> or visit the <a href="contact.html">Contact page</a>.</p>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="../index.html" class="nav-logo">
+            <img src="../Logos/logo_48x48.png" alt="" class="logo-img" width="34" height="34" aria-hidden="true" />
+            <span class="logo-text"><span class="logo-report">Report</span><span class="logo-drafter">Drafter</span></span>
+          </a>
+          <p>AI-powered report builder for extracting, reviewing, and finalizing structured reports with confidence and control.</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h4>Product</h4>
+            <a href="../index.html#features">Features</a>
+            <a href="../index.html#how-it-works">How It Works</a>
+            <a href="../index.html#confidence">AI Confidence</a>
+            <a href="../index.html#platforms">Platforms</a>
+          </div>
+          <div class="footer-col">
+            <h4>Resources</h4>
+            <a href="docs.html">Documentation</a>
+            <a href="api.html">API Reference</a>
+            <a href="changelog.html">Changelog</a>
+          </div>
+          <div class="footer-col">
+            <h4>Company</h4>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 ReportDrafter. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>
