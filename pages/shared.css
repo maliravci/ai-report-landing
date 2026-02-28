@@ -4,18 +4,6 @@
 
 /* Inherit variables & reset from main stylesheet */
 
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
-}
-
 /* --- Subpage Layout --- */
 .subpage-header {
   padding: calc(var(--nav-height) + 48px) 0 48px;
@@ -374,7 +362,7 @@
 .contact-form input:focus,
 .contact-form textarea:focus,
 .contact-form select:focus {
-  outline: none;
+  outline: 2px solid transparent;
   border-color: var(--primary);
   box-shadow: 0 0 0 3px rgba(99,102,241,0.12);
 }

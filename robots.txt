@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /tests/
+Disallow: /DEPLOYMENT.md
+Disallow: /TODO.md
 
 Sitemap: https://reportdrafter.com/sitemap.xml

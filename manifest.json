@@ -2,6 +2,8 @@
   "name": "ReportDrafter",
   "short_name": "ReportDrafter",
   "description": "AI-powered report builder with confidence scoring and human control.",
+  "lang": "en",
+  "id": "/",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
