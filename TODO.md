@@ -18,7 +18,7 @@ Check them off or update details as you go.
 
 - [ ] **Contact form endpoint** — Currently shows a client-side "Thank you" alert.
       Options: Formspree, Netlify Forms, Cloudflare Workers, or custom backend.
-      Once provided, update `pages/contact.html` form `action` attribute and remove inline `onsubmit`.
+      Once provided, update `pages/contact.html` form `action` attribute and replace the temporary client-side success simulation.
 
 ## Social / Branding
 
@@ -47,8 +47,8 @@ Check them off or update details as you go.
 - [ ] **Google Analytics / tracking ID** — No analytics script installed yet.
       Provide GA4 measurement ID (`G-XXXXXXXX`) to add tracking snippet.
 
-- [ ] **favicon.ico** — Convert from existing PNG or supply a dedicated `.ico` file for legacy browser support.
+- [x] **favicon.ico** — Added for legacy browser support.
 
 ---
 
-_Last updated: 2025-07-01_
+_Last updated: 2026-02-28_

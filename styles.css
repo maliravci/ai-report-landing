@@ -747,7 +747,6 @@ img { max-width: 100%; display: block; }
   align-items: center;
 }
 
-.confidence-content .section-header { text-align: left; margin-bottom: 0; }
 .confidence-content .section-title { margin-bottom: 16px; }
 
 .confidence-content > p {
@@ -780,6 +779,10 @@ img { max-width: 100%; display: block; }
   border-radius: 4px;
   transition: width 1s ease;
 }
+
+.level-width-95 { width: 95%; }
+.level-width-78 { width: 78%; }
+.level-width-55 { width: 55%; }
 
 .level-bar.high { background: linear-gradient(90deg, #22c55e, #4ade80); }
 .level-bar.medium { background: linear-gradient(90deg, #f59e0b, #fbbf24); }
@@ -907,7 +910,6 @@ img { max-width: 100%; display: block; }
   align-items: center;
   justify-content: center;
   border-radius: 18px;
-  margin-bottom: 20px;
 }
 
 .platform-icon svg {
@@ -1169,6 +1171,18 @@ img { max-width: 100%; display: block; }
   transition: top 0.2s;
 }
 .skip-link:focus { top: 16px; }
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
 
 /* ============================================================
    TRUST STRIP
@@ -1607,6 +1621,70 @@ img { max-width: 100%; display: block; }
 
 .nav-links a.active::after {
   transform: scaleX(1);
+}
+
+/* ============================================================
+   404 PAGE
+   ============================================================ */
+.error-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  text-align: center;
+  padding: 32px 24px;
+}
+
+.error-code {
+  font-size: clamp(80px, 15vw, 160px);
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.error-title {
+  font-size: clamp(22px, 3vw, 32px);
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--text);
+}
+
+.error-desc {
+  font-size: 16px;
+  color: var(--text-secondary);
+  max-width: 440px;
+  margin: 0 auto 32px;
+  line-height: 1.7;
+}
+
+.error-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.error-brand {
+  margin-top: 64px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  opacity: 0.5;
+}
+
+.error-brand img {
+  border-radius: 8px;
+}
+
+.error-brand-text {
+  font-weight: 600;
+  color: var(--text-secondary);
+  font-size: 14px;
 }
 
 /* ============================================================

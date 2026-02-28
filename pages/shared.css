@@ -4,6 +4,18 @@
 
 /* Inherit variables & reset from main stylesheet */
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 /* --- Subpage Layout --- */
 .subpage-header {
   padding: calc(var(--nav-height) + 48px) 0 48px;
@@ -110,7 +122,7 @@
   border: 1px solid var(--border);
   padding: 2px 6px;
   border-radius: 6px;
-  font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+  font-family: 'SF Mono', 'Fira Code', 'Consolas', 'Courier New', monospace;
 }
 
 .prose pre {
@@ -242,7 +254,7 @@
 .endpoint-method.delete { background: rgba(239,68,68,0.12); color: #dc2626; }
 
 .endpoint-path {
-  font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+  font-family: 'SF Mono', 'Fira Code', 'Consolas', 'Courier New', monospace;
   font-size: 14px;
   font-weight: 600;
   color: var(--text);
@@ -324,6 +336,19 @@
   line-height: 1.6;
 }
 
+.contact-email-line {
+  margin-top: 8px;
+}
+
+.contact-email-link {
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+.contact-email-link:hover {
+  color: var(--primary-dark);
+}
+
 .contact-form label {
   display: block;
   font-size: 14px;
@@ -359,11 +384,20 @@
   resize: vertical;
 }
 
+.contact-submit-btn {
+  width: 100%;
+  justify-content: center;
+}
+
+.prose-spaced {
+  margin-top: 48px;
+}
+
 /* --- Form validation & status --- */
 .field-error {
   display: block;
   font-size: 13px;
-  color: #ef4444;
+  color: var(--danger);
   margin: -14px 0 16px;
   min-height: 18px;
 }
@@ -381,14 +415,14 @@
 .form-status.success {
   display: block;
   background: rgba(34, 197, 94, 0.08);
-  color: #16a34a;
+  color: var(--success);
   border: 1px solid rgba(34, 197, 94, 0.2);
 }
 
 .form-status.error {
   display: block;
   background: rgba(239, 68, 68, 0.08);
-  color: #ef4444;
+  color: var(--danger);
   border: 1px solid rgba(239, 68, 68, 0.2);
 }
 

@@ -8,6 +8,7 @@
   <meta name="robots" content="noindex, nofollow" />
   <meta name="theme-color" content="#6366f1" />
   <link rel="icon" type="image/svg+xml" href="Logos/logo.svg" />
+  <link rel="icon" href="favicon.ico" sizes="any" />
   <link rel="icon" type="image/png" sizes="32x32" href="Logos/logo_32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="Logos/logo_16x16.png" />
   <link rel="apple-touch-icon" sizes="128x128" href="Logos/logo_128x128.png" />
@@ -16,54 +17,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
-  <style>
-    .error-page {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      text-align: center;
-      padding: 32px 24px;
-    }
-    .error-code {
-      font-size: clamp(80px, 15vw, 160px);
-      font-weight: 800;
-      background: linear-gradient(135deg, var(--primary), var(--accent));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      line-height: 1;
-      margin-bottom: 8px;
-    }
-    .error-title {
-      font-size: clamp(22px, 3vw, 32px);
-      font-weight: 700;
-      margin-bottom: 12px;
-      color: var(--text);
-    }
-    .error-desc {
-      font-size: 16px;
-      color: var(--text-secondary);
-      max-width: 440px;
-      margin: 0 auto 32px;
-      line-height: 1.7;
-    }
-    .error-actions {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-    .error-brand {
-      margin-top: 64px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      opacity: 0.5;
-    }
-    .error-brand img { border-radius: 8px; }
-  </style>
+  <noscript><style>.fade-in{opacity:1!important;transform:none!important;transition:none!important}</style></noscript>
 </head>
 <body>
 
@@ -76,8 +30,8 @@
       <a href="pages/contact.html" class="btn btn-ghost btn-lg">Contact Support</a>
     </div>
     <div class="error-brand">
-      <img src="Logos/logo_32x32.png" alt="" width="24" height="24" aria-hidden="true" />
-      <span style="font-weight: 600; color: var(--text-secondary); font-size: 14px;">ReportDrafter</span>
+      <img src="Logos/logo_32x32.png" alt="" width="32" height="32" aria-hidden="true" />
+      <span class="error-brand-text">ReportDrafter</span>
     </div>
   </main>
 
