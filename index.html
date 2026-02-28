@@ -3,17 +3,63 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ReportDrafter — Intelligent Document Automation</title>
-  <meta name="description" content="Upload templates, extract data with AI, review with confidence scores, and download polished reports in seconds." />
+  <title>ReportDrafter — Complete Reports 10x Faster with AI Document Extraction</title>
+  <meta name="description" content="ReportDrafter uses AI to extract fields from your documents, scores confidence on every entry, and lets your team review, correct, and export polished reports in minutes — not hours." />
+  <meta name="keywords" content="report builder, AI document extraction, automated reporting, confidence scoring, document automation, compliance reports, report generator" />
+  <link rel="canonical" href="https://reportdrafter.com/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://reportdrafter.com/" />
+  <meta property="og:title" content="ReportDrafter — Complete Reports 10x Faster with AI" />
+  <meta property="og:description" content="Upload templates, extract data with AI confidence scoring, review every field, and export polished reports in minutes." />
+  <meta property="og:image" content="https://reportdrafter.com/Logos/logo_512x512.png" />
+  <meta property="og:site_name" content="ReportDrafter" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="ReportDrafter — Complete Reports 10x Faster with AI" />
+  <meta name="twitter:description" content="Upload templates, extract data with AI confidence scoring, review every field, and export polished reports in minutes." />
+  <meta name="twitter:image" content="https://reportdrafter.com/Logos/logo_512x512.png" />
+
+  <!-- JSON-LD: Software App -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "ReportDrafter",
+    "description": "AI-powered report builder that extracts data from source documents with confidence scoring, enables field-level review and editing, and exports polished reports.",
+    "url": "https://reportdrafter.com",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web, iOS, Android",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  }
+  </script>
+
+  <!-- JSON-LD: FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "How accurate is the AI extraction?", "acceptedAnswer": { "@type": "Answer", "text": "ReportDrafter typically achieves 90–98% accuracy on structured documents. Every field comes with a confidence score so you always know where to focus your review." } },
+      { "@type": "Question", "name": "What file formats are supported?", "acceptedAnswer": { "@type": "Answer", "text": "Templates and source documents can be in .docx, .xlsx, and .pdf. Exported reports are available as .docx or .xlsx, preserving layout and formatting." } },
+      { "@type": "Question", "name": "Is my data kept secure?", "acceptedAnswer": { "@type": "Answer", "text": "Files are encrypted in transit (TLS 1.3) and at rest (AES-256). We do not use your documents to train models." } },
+      { "@type": "Question", "name": "Can I cancel anytime?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Paid plans are month-to-month with no lock-in. Downgrade or cancel anytime from your account settings." } }
+    ]
+  }
+  </script>
+
   <link rel="icon" type="image/png" sizes="32x32" href="Logos/logo_32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="Logos/logo_16x16.png" />
   <link rel="apple-touch-icon" sizes="128x128" href="Logos/logo_128x128.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <!-- ========== NAVBAR ========== -->
   <nav class="navbar" id="navbar">
@@ -25,8 +71,8 @@
       <ul class="nav-links" id="navLinks">
         <li><a href="#features">Features</a></li>
         <li><a href="#how-it-works">How It Works</a></li>
-        <li><a href="#confidence">AI Confidence</a></li>
-        <li><a href="#platforms">Platforms</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#faq">FAQ</a></li>
       </ul>
       <div class="nav-actions">
         <a href="https://app.reportdrafter.com/login" class="btn btn-sm nav-login">Log In</a>
@@ -39,7 +85,7 @@
   </nav>
 
   <!-- ========== HERO ========== -->
-  <header class="hero" id="hero">
+  <header class="hero" id="main-content">
     <div class="hero-bg"></div>
     <div class="container hero-container">
       <div class="hero-content">
@@ -49,10 +95,10 @@
         </div>
         <h1 class="hero-title">
           Build Accurate Reports<br />
-          <span class="gradient-text">From Real Documents</span>
+          <span class="gradient-text">From Real Documents or Web Search</span>
         </h1>
         <p class="hero-subtitle">
-          ReportDrafter helps operations and compliance teams complete repetitive reports faster. Upload a template and source files, review confidence on every field, make corrections, and export a final report you can trust.
+          Complete repetitive reports in minutes, not hours. Upload a template and source files — ReportDrafter extracts every field with AI, shows a confidence score on each one, and lets your team correct and export with confidence.
         </p>
         <div class="hero-cta">
           <a href="https://app.reportdrafter.com/signup" class="btn btn-primary btn-lg">
@@ -131,8 +177,28 @@
     </div>
   </header>
 
+  <!-- ========== TRUST STRIP ========== -->
+  <section class="trust-strip">
+    <div class="container">
+      <p class="trust-label">Trusted by teams across</p>
+      <div class="trust-logos">
+        <span class="trust-logo">Finance &amp; Banking</span>
+        <span class="trust-divider"></span>
+        <span class="trust-logo">Legal &amp; Compliance</span>
+        <span class="trust-divider"></span>
+        <span class="trust-logo">Healthcare</span>
+        <span class="trust-divider"></span>
+        <span class="trust-logo">Real Estate</span>
+        <span class="trust-divider"></span>
+        <span class="trust-logo">Government</span>
+        <span class="trust-divider"></span>
+        <span class="trust-logo">Insurance</span>
+      </div>
+    </div>
+  </section>
+
   <!-- ========== FEATURES ========== -->
-  <section class="features" id="features">
+  <section class="features" id="features" tabindex="-1">
     <div class="container">
       <div class="section-header">
         <span class="section-badge">Features</span>
@@ -339,6 +405,150 @@
     </div>
   </section>
 
+  <!-- ========== TESTIMONIALS ========== -->
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Testimonials</span>
+        <h2 class="section-title">Loved by Teams Who<br /><span class="gradient-text">Deal in Detail</span></h2>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <blockquote>“We cut report completion time from 3 hours to under 20 minutes. The confidence scoring alone saves our team from constant back-and-forth on data quality.”</blockquote>
+          <div class="testimonial-author">
+            <div class="author-avatar">SK</div>
+            <div>
+              <div class="author-name">Sarah K.</div>
+              <div class="author-role">Operations Lead, Asset Management</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <blockquote>“Field-level re-extraction is a game changer. I don’t restart the whole process when one field is wrong — just fix that field and regenerate.”</blockquote>
+          <div class="testimonial-author">
+            <div class="author-avatar">MR</div>
+            <div>
+              <div class="author-name">Marcus R.</div>
+              <div class="author-role">Compliance Analyst, Insurance Group</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <blockquote>“The multilingual support was the deciding factor for us. Our team spans 4 countries and ReportDrafter works natively for all of them.”</blockquote>
+          <div class="testimonial-author">
+            <div class="author-avatar">TA</div>
+            <div>
+              <div class="author-name">Tomoko A.</div>
+              <div class="author-role">Document Process Manager, Legal Services</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PRICING ========== -->
+  <section class="pricing" id="pricing">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Pricing</span>
+        <h2 class="section-title">Simple Pricing,<br /><span class="gradient-text">No Surprises</span></h2>
+        <p class="section-subtitle">Start free. Upgrade when your team is ready. Cancel anytime.</p>
+      </div>
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <div class="pricing-tier">Starter</div>
+          <div class="pricing-price"><span class="price-value">Free</span></div>
+          <p class="pricing-desc">Try ReportDrafter with your own templates, no card needed.</p>
+          <ul class="pricing-features">
+            <li>Up to 5 reports / month</li>
+            <li>1 workspace</li>
+            <li>PDF &amp; Word templates</li>
+            <li>AI extraction + confidence scores</li>
+            <li>Export to .docx / .xlsx</li>
+          </ul>
+          <a href="https://app.reportdrafter.com/signup" class="btn btn-ghost btn-block">Get Started Free</a>
+        </div>
+        <div class="pricing-card featured">
+          <div class="pricing-badge-tag">Most Popular</div>
+          <div class="pricing-tier">Professional</div>
+          <div class="pricing-price"><span class="price-value">$29</span><span class="price-period">/mo</span></div>
+          <p class="pricing-desc">For teams handling recurring reports at volume.</p>
+          <ul class="pricing-features">
+            <li>Unlimited reports</li>
+            <li>5 workspaces</li>
+            <li>All file formats</li>
+            <li>Bulk batch processing</li>
+            <li>Review trail &amp; audit log</li>
+            <li>Priority support</li>
+          </ul>
+          <a href="https://app.reportdrafter.com/signup?plan=pro" class="btn btn-primary btn-block">Start Free Trial</a>
+        </div>
+        <div class="pricing-card">
+          <div class="pricing-tier">Enterprise</div>
+          <div class="pricing-price"><span class="price-value">Custom</span></div>
+          <p class="pricing-desc">For large teams needing SSO, integrations, and SLAs.</p>
+          <ul class="pricing-features">
+            <li>Unlimited everything</li>
+            <li>SSO / SAML</li>
+            <li>Custom integrations (S3, SharePoint…)</li>
+            <li>Dedicated account manager</li>
+            <li>SLA &amp; uptime guarantee</li>
+            <li>Security review docs</li>
+          </ul>
+          <a href="pages/contact.html" class="btn btn-ghost btn-block">Contact Sales</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FAQ ========== -->
+  <section class="faq" id="faq">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">FAQ</span>
+        <h2 class="section-title">Common Questions,<br /><span class="gradient-text">Straight Answers</span></h2>
+      </div>
+      <div class="faq-list" role="list">
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">How accurate is the AI extraction?</button>
+          <div class="faq-answer" hidden>ReportDrafter typically achieves 90–98% accuracy on structured documents. Accuracy depends on template clarity and source document quality. Every field comes with a confidence score so you always know where to focus your review.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">What file formats are supported?</button>
+          <div class="faq-answer" hidden>Templates and source documents can be in .docx, .xlsx, or .pdf. Exported reports are available as .docx or .xlsx, preserving your original layout, formulas, and formatting.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">Is my data kept secure?</button>
+          <div class="faq-answer" hidden>Yes. Uploaded files are encrypted in transit (TLS 1.3) and at rest (AES-256). We do not use your documents to train AI models, and you can delete all data at any time from your workspace settings.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">Can I re-extract a single field without restarting?</button>
+          <div class="faq-answer" hidden>Yes — field-level re-extraction is a core feature. Lock any fields you’ve approved, then trigger re-extraction only on the ones that need it. No need to redo the entire document.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">Does it work on mobile?</button>
+          <div class="faq-answer" hidden>ReportDrafter has native iOS and Android apps alongside the web interface. The mobile apps are optimized for field review, value approval, and export — full parity with the desktop experience.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">What languages are supported?</button>
+          <div class="faq-answer" hidden>The interface is available in 21 languages. Source documents and templates can be in any written language — the AI model handles multilingual content without separate configuration.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">Is there an API?</button>
+          <div class="faq-answer" hidden>Yes. Professional and Enterprise plans include REST API access for programmatic template upload, extraction triggering, and report download. See our <a href="pages/api.html">API Reference</a> for full documentation.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">Can I cancel anytime?</button>
+          <div class="faq-answer" hidden>Absolutely. Paid plans are month-to-month with no lock-in. Downgrade to free or cancel entirely from your account settings at any time — no questions asked.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ========== CTA ========== -->
   <section class="cta" id="cta">
     <div class="container">
@@ -419,6 +629,16 @@
       </div>
     </div>
   </footer>
+
+  <!-- ========== BACK TO TOP + FLOATING CTA ========== -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 15l-6-6-6 6"/></svg>
+  </button>
+
+  <div class="floating-cta" id="floatingCta" aria-hidden="true">
+    <span>Ready to try it?</span>
+    <a href="https://app.reportdrafter.com/signup" class="btn btn-primary btn-sm">Sign Up Free</a>
+  </div>
 
   <script src="script.js"></script>
 </body>
