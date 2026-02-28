@@ -177,17 +177,23 @@
     if (heroBottom < 0) {
       floatingCta.classList.add('visible');
       floatingCta.setAttribute('aria-hidden', 'false');
+      if (backToTop) { backToTop.classList.add('cta-offset'); }
     } else {
       floatingCta.classList.remove('visible');
       floatingCta.setAttribute('aria-hidden', 'true');
+      if (backToTop) { backToTop.classList.remove('cta-offset'); }
     }
   }
 
   // --- Active nav link on scroll ---
+  const navAnchors = document.querySelectorAll('.nav-links a[href^="#"]');
+  const navIds = new Set();
+  navAnchors.forEach(function (a) {
+    navIds.add(a.getAttribute('href').slice(1));
+  });
   const navSections = Array.from(
     document.querySelectorAll('main > section[id], main > div[id]')
-  );
-  const navAnchors = document.querySelectorAll('.nav-links a[href^="#"]');
+  ).filter(function (sec) { return navIds.has(sec.id); });
 
   function updateActiveNav() {
     if (!navAnchors.length) { return; }

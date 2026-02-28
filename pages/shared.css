@@ -184,11 +184,12 @@
   display: inline-block;
   background: linear-gradient(135deg, rgba(99,102,241,0.1), rgba(6,182,212,0.1));
   color: var(--primary);
-  font-size: 13px;
-  font-weight: 700;
-  padding: 4px 14px;
+  font-size: 18px;
+  font-weight: 800;
+  padding: 6px 18px;
   border-radius: var(--radius-full);
   margin-bottom: 8px;
+  border-left: 3px solid var(--primary);
 }
 
 .changelog-date {
@@ -285,7 +286,7 @@
   margin: 0 auto 12px;
 }
 
-.team-member h4 {
+.team-member h3 {
   font-size: 15px;
   font-weight: 700;
   margin-bottom: 4px;
