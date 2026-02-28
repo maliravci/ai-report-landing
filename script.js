@@ -253,14 +253,21 @@
 
     function showFormError(id, message) {
       const errorEl = document.getElementById('error-' + id);
+      const field = contactForm.elements[id];
       if (errorEl) {
         errorEl.textContent = message;
+      }
+      if (field) {
+        field.setAttribute('aria-invalid', 'true');
       }
     }
 
     function resetFormErrors() {
       contactForm.querySelectorAll('.field-error').forEach(function (el) {
         el.textContent = '';
+      });
+      contactForm.querySelectorAll('[aria-invalid]').forEach(function (el) {
+        el.removeAttribute('aria-invalid');
       });
       formStatus.textContent = '';
       formStatus.className = 'form-status';
@@ -291,6 +298,8 @@
       }
 
       if (!isValid) {
+        const firstInvalid = contactForm.querySelector('[aria-invalid="true"]');
+        if (firstInvalid) { firstInvalid.focus(); }
         return;
       }
 
@@ -299,7 +308,7 @@
 
       setTimeout(function () {
         formStatus.className = 'form-status success';
-        formStatus.textContent = 'Thank you! We’ll be in touch within 1 business day.';
+        formStatus.textContent = 'Thank you! We\'ll be in touch within 1 business day.';
         contactForm.reset();
         contactSubmit.disabled = false;
         contactSubmit.innerHTML = submitDefaultHtml;
