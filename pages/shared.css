@@ -114,8 +114,8 @@
 }
 
 .prose pre {
-  background: #0f172a;
-  color: #e2e8f0;
+  background: var(--text);
+  color: var(--border);
   padding: 20px 24px;
   border-radius: var(--radius);
   overflow-x: auto;
@@ -213,9 +213,9 @@
   margin-right: 6px;
 }
 
-.tag.added { background: rgba(34,197,94,0.1); color: #16a34a; }
-.tag.improved { background: rgba(99,102,241,0.1); color: #6366f1; }
-.tag.fixed { background: rgba(245,158,11,0.1); color: #d97706; }
+.tag.added { background: rgba(34,197,94,0.1); color: var(--success-dark); }
+.tag.improved { background: rgba(99,102,241,0.1); color: var(--primary); }
+.tag.fixed { background: rgba(245,158,11,0.1); color: var(--warning-dark); }
 
 /* --- API Reference specific --- */
 .endpoint-card {
@@ -237,10 +237,10 @@
   margin-right: 8px;
 }
 
-.endpoint-method.get { background: rgba(34,197,94,0.12); color: #16a34a; }
-.endpoint-method.post { background: rgba(99,102,241,0.12); color: #6366f1; }
-.endpoint-method.put { background: rgba(245,158,11,0.12); color: #d97706; }
-.endpoint-method.delete { background: rgba(239,68,68,0.12); color: #dc2626; }
+.endpoint-method.get { background: rgba(34,197,94,0.12); color: var(--success-dark); }
+.endpoint-method.post { background: rgba(99,102,241,0.12); color: var(--primary); }
+.endpoint-method.put { background: rgba(245,158,11,0.12); color: var(--warning-dark); }
+.endpoint-method.delete { background: rgba(239,68,68,0.12); color: var(--danger-dark); }
 
 .endpoint-path {
   font-family: 'SF Mono', 'Fira Code', 'Consolas', 'Courier New', monospace;
