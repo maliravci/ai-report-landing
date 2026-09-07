@@ -12,6 +12,8 @@ These files are required for the site to function:
 index.html              ← Main landing page
 styles.css              ← Styling for index.html
 script.js               ← Interactive behavior
+analytics.config.js     ← Public GA4 measurement ID configuration
+analytics.js            ← Consent-gated Google Analytics integration
 404.html                ← Custom error page
 favicon.ico             ← Browser tab icon
 manifest.json           ← PWA manifest
@@ -48,6 +50,30 @@ tests/                  ← Automated test scripts
 ---
 
 ## Deployment Methods
+
+## Recommended Release Packaging (Use This)
+
+Build a production archive that includes only allowlisted runtime files:
+
+```bash
+bash scripts/package-release.sh
+```
+
+This script:
+
+- includes only required site assets,
+- excludes docs/tests/git metadata automatically,
+- runs a preflight secrets scan,
+- writes release artifacts to `dist/`.
+
+Release output:
+
+```text
+dist/ai-report-landing-<timestamp>.tar.gz
+dist/ai-report-landing-<timestamp>.filelist.txt
+```
+
+Use this tarball for manual upload to servers.
 
 ### GitHub Pages
 
@@ -103,43 +129,15 @@ Or use the deploy script below.
 
 ---
 
-## Deploy Script
+## Security Preflight
 
-A helper script to copy only production files to a target directory:
+Run this manually at any time:
 
 ```bash
-#!/usr/bin/env bash
-# deploy.sh — Copy production files to a target directory
-set -euo pipefail
-
-TARGET="${1:?Usage: ./deploy.sh <target-directory>}"
-
-mkdir -p "$TARGET"
-
-# Files to exclude from deployment
-EXCLUDES=(
-  '.git'
-  '.github'
-  'tests'
-  'README.md'
-  'DEPLOYMENT.md'
-  'TODO.md'
-  '.gitignore'
-  '*.py'
-  'deploy.sh'
-)
-
-EXCLUDE_ARGS=()
-for e in "${EXCLUDES[@]}"; do
-  EXCLUDE_ARGS+=(--exclude="$e")
-done
-
-rsync -av "${EXCLUDE_ARGS[@]}" ./ "$TARGET/"
-
-echo ""
-echo "✓ Deployed to $TARGET"
-echo "  $(find "$TARGET" -type f | wc -l | tr -d ' ') files"
+bash scripts/check-secrets.sh
 ```
+
+It blocks obvious secret patterns before release packaging.
 
 ---
 
@@ -148,6 +146,8 @@ echo "  $(find "$TARGET" -type f | wc -l | tr -d ' ') files"
 Run before every deployment:
 
 - [ ] `bash tests/run-tests.sh` — all tests pass
+- [ ] `bash scripts/check-secrets.sh` — no secrets detected
+- [ ] `bash scripts/package-release.sh` — tarball created in `dist/`
 - [ ] Open `index.html` locally — no console errors
 - [ ] Check mobile layout (375px) — no overflow or overlap
 - [ ] Verify all nav links work — Features, How It Works, Pricing, FAQ

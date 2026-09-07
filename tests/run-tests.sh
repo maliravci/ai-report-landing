@@ -40,6 +40,7 @@ run_suite "$SCRIPT_DIR/check-links.sh"
 run_suite "$SCRIPT_DIR/check-accessibility.sh"
 run_suite "$SCRIPT_DIR/check-css.sh"
 run_suite "$SCRIPT_DIR/check-js.sh"
+run_suite "$SCRIPT_DIR/check-analytics-consent.sh"
 
 echo ""
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"

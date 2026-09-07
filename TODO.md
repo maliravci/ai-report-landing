@@ -5,6 +5,19 @@ Check them off or update details as you go.
 
 ---
 
+## Production Launch Preparation (VM + Static Deploy)
+
+- [x] **Strict release packaging script** — Added `scripts/package-release.sh` with allowlist-only deploy contents.
+- [x] **Secret preflight script** — Added `scripts/check-secrets.sh` to block obvious leaked credentials.
+- [x] **Deploy artifact folder policy** — Added `.gitignore` entry for `dist/` and sensitive extensions (`*.key`, `*.pem`, etc.).
+- [ ] **Create final release archive** — Run `bash scripts/package-release.sh` right before server upload.
+- [ ] **Verify release file manifest** — Confirm `dist/*.filelist.txt` has only runtime files.
+- [ ] **Run full tests before upload** — `bash tests/run-tests.sh`.
+- [ ] **Server hardening baseline** — SSH key-only auth, firewall ports restricted to `22/80/443`, auto-updates enabled.
+- [ ] **TLS + proxy decision** — Confirm Cloudflare setup and SSL mode before go-live.
+
+---
+
 ## Assets Needed
 
 - [ ] **Product screenshots / demo video** — Hero section and How It Works visuals.
@@ -44,8 +57,8 @@ Check them off or update details as you go.
 - [ ] **Custom domain DNS** — Confirm domain registrar and hosting (GitHub Pages, Netlify, Vercel, etc.)
       `sitemap.xml` and canonical URLs already reference `reportdrafter.com`.
 
-- [ ] **Google Analytics / tracking ID** — No analytics script installed yet.
-      Provide GA4 measurement ID (`G-XXXXXXXX`) to add tracking snippet.
+- [x] **Google Analytics integration** — Consent-gated GA4 support is installed.
+      Set `measurementId` in `analytics.config.js` with the production `G-XXXXXXXX` value before deployment.
 
 - [x] **favicon.ico** — Added for legacy browser support.
 
